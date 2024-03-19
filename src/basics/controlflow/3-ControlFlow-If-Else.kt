@@ -167,7 +167,6 @@ fun main() {
     otherMethod()
 
     if (isStudent==true) //nullable değer değilse bunu yapmaya gerek yok if(student) demek daha doğru olur
-}
 
 private fun otherMethod() {
 
