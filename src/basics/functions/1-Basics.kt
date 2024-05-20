@@ -144,9 +144,9 @@ class B:A(){
 
 // Overload Fonksiyon
 
-fun takeSquare(number: Int = 5, number2: Int = 3): Int {
-    return 2 * number
-}
+//fun takeSquare(number: Int = 5, number2: Int = 3): Int {
+//    return 2 * number
+//}
 
 fun repeat(times: Int, startedValue: Int = 0) {
     for (index in startedValue until times) {
@@ -154,13 +154,21 @@ fun repeat(times: Int, startedValue: Int = 0) {
     }
 }
 
-//fun takeSquare(number: Int = 5): Int {
-//    return 2 * number
-//}
-//
-//fun takeSquare(number: Int = 9): Int {
-//    return 2 * number
-//}
+fun takeSquare(number: Int = 5): Int {
+    return 2 * number
+}
+
+fun takeSquare(number: Int = 5,number2:Int=24): Int {
+    return 2 * number
+}
+
+fun test(a:String){
+
+}
+
+fun test(a:Int){
+
+}
 //
 //fun takeSquare():Int{
 //

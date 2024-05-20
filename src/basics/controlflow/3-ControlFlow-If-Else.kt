@@ -162,7 +162,7 @@ fun main() {
     if (isStudent) {
         println("Student")
         throw IOException()
-        //  return
+//         return
     }
     otherMethod()
 

@@ -14,6 +14,7 @@ fun main() {
     }
     //  0 , 1   , 2,   3 size->4
     val countryCodeArray = arrayOf("tr", "az", "en", "fr")
+    val alphList='A'..'Z'
 
     for (value in countryCodeArray) {
         print("$value ") //tr az en fr
@@ -30,6 +31,9 @@ fun main() {
     3 . değeri : fr
      */
 
+    for ((index,value) in countryCodeArray.withIndex()){
+        print("\n$index. değeri : $value ")  // index ve value birlikte alabiliriz withIndex()
+    }
     for ((index,value) in countryCodeArray.withIndex()){
         print("\n$index. değeri : $value ")  // index ve value birlikte alabiliriz withIndex()
     }

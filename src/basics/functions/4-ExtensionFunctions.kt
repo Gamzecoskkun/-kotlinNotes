@@ -1,63 +1,70 @@
 package basics.functions
 
+
 import kotlin.math.log
 import kotlin.math.log2
 
-fun main() {
-
-    /**
-     * Bu dunyayi cekilebilir kilan seylerin basında gelir Extension Functions  :)
-     *
-     * Uzerinde degisiklik yapamadigimiz(readOnly) siniflara, ya da yapmak istemedigimiz siniflara, bu siniflarin
-     * icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz
-     * Bunu yaparken unutmamiz gereken; yazdiginiz extension fonksiyon aslinda o sinifin gercek bir fonksiyonu olmayacaktir.
-     *
-     * Sad but true story. Olsundu. Extension fonksiyonlar kalbinize girecekler. Bir sinifa ait olmalari gerekmez :)
-     *
-     * Reciver diye adlandiracagimiz bir sinifa ihtiyac duyar. Extension yazacagimiz sinifi ifade eder Receiver tanimi.
-     *
-     * Yapisal olarak;
-     *
-     * fun String.extPrint(handSomeValue:HandSomeOne):Unit{
-     *
-     * }
-     * **/
-
-    //normalde degiskenlere deger atayip, print islemini asagidakiler gibi  yapariz
-    val pi: Double = 3 + 0.14
-    println("Double Number : $pi")
-
-    val schoolNumber: Int = 1341
-    println("Int Number :$schoolNumber")
-
-    val tcIdentityNumber: Long = 18608268888
-    println("Long Number : $tcIdentityNumber")
-
-    //yukaridaki kullanimlarin yerine normal bir log2 fonksiyonu yazilabilir ve asagidaki gibi kullanilabilir
-    log2(pi, "Double Number:")
-    log2(schoolNumber, "Int Number:")
-    log2(tcIdentityNumber, "Long Number")
-
-    pi.log("Double Number:")
-    schoolNumber.log("Int Number")
-    tcIdentityNumber.log("Long Number")
-
-
-    /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-    //extension fonksiyonlar ister direkt value'lar uzerinden cagrilabilir.
-    (3 + 0.14).log("")
-    1341.log("")
-    1341.toFloat()
-    18608268888.log("")
-
-    (3 + 0.14) log ""
-
-    //isterseniz de degiskenler uzerinden
-    pi.log("")
-    schoolNumber.log("")
-    tcIdentityNumber.log("")
+fun main(){
+    val shape=Shape()
+    shape.type="45"
+    println(shape.type)
 }
+
+//fun main() {
+//
+//    /**
+//     * Bu dunyayi cekilebilir kilan seylerin basında gelir Extension Functions  :)
+//     *
+//     * Uzerinde degisiklik yapamadigimiz(readOnly) siniflara, ya da yapmak istemedigimiz siniflara, bu siniflarin
+//     * icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz
+//     * Bunu yaparken unutmamiz gereken; yazdiginiz extension fonksiyon aslinda o sinifin gercek bir fonksiyonu olmayacaktir.
+//     *
+//     * Sad but true story. Olsundu. Extension fonksiyonlar kalbinize girecekler. Bir sinifa ait olmalari gerekmez :)
+//     *
+//     * Reciver diye adlandiracagimiz bir sinifa ihtiyac duyar. Extension yazacagimiz sinifi ifade eder Receiver tanimi.
+//     *
+//     * Yapisal olarak;
+//     *
+//     * fun String.extPrint(handSomeValue:HandSomeOne):Unit{
+//     *
+//     * }
+//     * **/
+//
+//    //normalde degiskenlere deger atayip, print islemini asagidakiler gibi  yapariz
+//    val pi: Double = 3 + 0.14
+//    println("Double Number : $pi")
+//
+//    val schoolNumber: Int = 1341
+//    println("Int Number :$schoolNumber")
+//
+//    val tcIdentityNumber: Long = 18608268888
+//    println("Long Number : $tcIdentityNumber")
+//
+//    //yukaridaki kullanimlarin yerine normal bir log2 fonksiyonu yazilabilir ve asagidaki gibi kullanilabilir
+//    log2(pi, "Double Number:")
+//    log2(schoolNumber, "Int Number:")
+//    log2(tcIdentityNumber, "Long Number")
+//
+//    pi.log("Double Number:")
+//    schoolNumber.log("Int Number")
+//    tcIdentityNumber.log("Long Number")
+//
+//
+//    /*-------------------------------------------------------------------------------------------------------------------------------*/
+//
+//    //extension fonksiyonlar ister direkt value'lar uzerinden cagrilabilir.
+//    (3 + 0.14).log("")
+//    1341.log("")
+//    1341.toFloat()
+//    18608268888.log("")
+//
+//    (3 + 0.14) log ""
+//
+//    //isterseniz de degiskenler uzerinden
+//    pi.log("")
+//    schoolNumber.log("")
+//    tcIdentityNumber.log("")
+//}
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -144,7 +151,7 @@ open class Shape {
  * kendi icinde barindiriyorsa , bu durumda yazilan extension fonksiyon gecersizdir. Sinifin uye fonksiyonu cagirilir.
  */
 
-fun Shape.setNumber(intNumber: Int) {
+fun Shape.setNumber(intNumber:Int) {
     val result = intNumber * intNumber
     println(result)
 }
@@ -159,19 +166,19 @@ fun Shape.setNumber(intNumber: Int) {
  * Bu konu property vs field konusu ile beraber sinif'lar islenirken detayli anlatilacaktir.
  */
 
-var Shape.type
+var Shape.type: String
     get() = "Rectangle"
     set(value) {
-        type = value
+//        type = value
     }
 
 //var Shape.type2:String="ejdısjs"
 
-fun Shape.getType(): String {
+fun Shape.getTypeAs(): String {
     return type
 }
 
-fun Shape.setType(value: String) {
+fun Shape.setTypeAs(value: String) {
     type = value
 }
 
